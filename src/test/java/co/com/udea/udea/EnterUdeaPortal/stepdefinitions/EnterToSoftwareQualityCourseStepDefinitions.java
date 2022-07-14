@@ -1,6 +1,7 @@
 package co.com.udea.udea.EnterUdeaPortal.stepdefinitions;
 
 import co.com.udea.edu.EnterUdeaPortal.models.PersonalInformation;
+import co.com.udea.edu.EnterUdeaPortal.questions.ValidateEnterLoggin;
 import co.com.udea.edu.EnterUdeaPortal.questions.ValidateEnterMeeting;
 import co.com.udea.edu.EnterUdeaPortal.tasks.AccessToHomePage;
 import co.com.udea.edu.EnterUdeaPortal.tasks.EnterToMeeting;
@@ -47,6 +48,11 @@ public class EnterToSoftwareQualityCourseStepDefinitions {
     @Then("^The stundent will watch the alert and click to accept (.*)$")
     public void theStundentWillWatchTheAlertAndClickToAccept(String msj) {
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidateEnterMeeting.answered(), Matchers.equalTo(msj)));
+    }
+
+    @Then("^The stundent will watch the message (.*)$")
+    public void theStundentWillWatchTheMessage(String msj) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidateEnterLoggin.resp(),Matchers.equalTo(msj)));
     }
 
 }

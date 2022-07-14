@@ -44,6 +44,20 @@
 # *.iml
 # *.ipr
 
+
+#Serenity
+*/target
+
+#Settings
+*/settings/
+*./settings/
+
+#Log
+.debug.log
+*/.debug.log
+*/debug.log
+
+
 # CMake
 cmake-build-*/
 
@@ -144,18 +158,6 @@ replay_pid*
 .gradle
 **/build/
 !src/**/build/
-
-#Serenity
-*/target
-
-#Settings
-*/settings/
-*./settings/
-
-#Log
-.debug.log
-*/.debug.log
-*/debug.log
 
 # Ignore Gradle GUI config
 gradle-app.setting
