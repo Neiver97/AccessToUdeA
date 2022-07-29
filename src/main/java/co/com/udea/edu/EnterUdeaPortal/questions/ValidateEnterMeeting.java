@@ -2,20 +2,11 @@ package co.com.udea.edu.EnterUdeaPortal.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.thucydides.core.annotations.Managed;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ValidateEnterMeeting implements Question {
 
-    private static String message;
-
-    @Managed
-    WebDriver driver;
-
-
+    private static boolean flag=false;
 
     @Override
     public Object answeredBy(Actor actor) {
@@ -26,12 +17,12 @@ public class ValidateEnterMeeting implements Question {
             e.printStackTrace();
         }
 
-        Alert alert = driver.switchTo().alert();
-        System.out.println(alert.getText());
-        message = alert.getText();
-        alert.dismiss();
 
-        return message;
+        if (ExpectedConditions.alertIsPresent()!=null){
+            flag = true;
+        }
+
+        return flag;
     }
 
     public static ValidateEnterMeeting answered(){

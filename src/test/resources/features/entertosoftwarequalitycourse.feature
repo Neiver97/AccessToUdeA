@@ -15,10 +15,11 @@ Feature: As a user I need to enter to course Software Quality to UdeA page
       | <userName> | <password> | <timeSeconds> |
     And The student select the course Software Quality
     And The student click to enter to meeting
-    Then The stundent will watch the alert and click to accept <message>
+    Then The stundent will watch the alert and click to accept <flag>
     Examples:
-      | userName     | password | timeSeconds | message |
-      | Neiver.tapia | 123      | 60          | Holaaaa |
+      | userName     | password | timeSeconds | flag |
+      | Neiver.tapia | 123        | 60          | true |
+      #| Neiver.tapia | ccc | 60          | false |
 
 
   @ErrorAtLoggin

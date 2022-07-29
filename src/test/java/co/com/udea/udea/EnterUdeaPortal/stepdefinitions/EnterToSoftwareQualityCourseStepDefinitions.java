@@ -46,8 +46,8 @@ public class EnterToSoftwareQualityCourseStepDefinitions {
     }
 
     @Then("^The stundent will watch the alert and click to accept (.*)$")
-    public void theStundentWillWatchTheAlertAndClickToAccept(String msj) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidateEnterMeeting.answered(), Matchers.equalTo(msj)));
+    public void theStundentWillWatchTheAlertAndClickToAccept(Boolean flag) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ValidateEnterMeeting.answered(), Matchers.equalTo(flag)));
     }
 
     @Then("^The stundent will watch the message (.*)$")
